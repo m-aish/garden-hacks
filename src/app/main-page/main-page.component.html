@@ -1,1 +1,57 @@
-<p>main-page works!</p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css">
+  
+  
+<app-navigation></app-navigation>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Show us your Garden!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/15181efa86.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
+</head>
+
+<body>
+    <section class="hero is-medium">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title is-1 ">Hello, there <i class="fas fa-seedling"></i></h1>
+                <h2 class="subtitle">Please enter the list of fruits, vegetables and spices you grow in your garden!<br>
+                </h2>
+            </div>
+        </div>
+    </section>
+    <section id="parallax-1" class="hero is-large ">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-6 is-offset-6">
+
+                            <strong class="title">Show us your Garden!:</strong>
+                            <br><br>
+                            <input class="input is-large" type="text" placeholder="Enter your fruits"[(ngModel)]="selectedFruits"> <br><br>
+                            <input class="input is-large" type="text" placeholder="Enter your vegetables"[(ngModel)]="selectedVegs"> <br><br>
+                            <input class="input is-large" type="text" placeholder="Enter your spices" [(ngModel)]="selectedSpices"> <br><br>
+                        <a class="button is-white is-inverted" (click)="getGarden()">Next&ensp;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</body>
+
+</html>

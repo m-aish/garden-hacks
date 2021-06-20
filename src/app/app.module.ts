@@ -8,13 +8,16 @@ import {MainPageComponent} from './main-page/main-page.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule} from 'angularx-social-login';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NavigationComponent } from './navigation/navigation.component';
+import { FormsModule } from '@angular/forms';
 //import {AuthGuardService} from './auth-guard.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    MainPageComponent
+    MainPageComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +28,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ]),
     BrowserAnimationsModule,
     SocialLoginModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [{
     provide: 'SocialAuthServiceConfig',
