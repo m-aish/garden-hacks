@@ -1,14 +1,15 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css">
-  
-  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css">
+
+
 <app-navigation></app-navigation>
 <!DOCTYPE html>
 <html>
@@ -39,17 +40,48 @@
                 <div class="columns">
                     <div class="column is-6 is-offset-6">
 
-                            <strong class="title">Show us your Garden!:</strong>
-                            <br><br>
-                            <input class="input is-large" type="text" placeholder="Enter your fruits"[(ngModel)]="selectedFruits"> <br><br>
-                            <input class="input is-large" type="text" placeholder="Enter your vegetables"[(ngModel)]="selectedVegs"> <br><br>
-                            <input class="input is-large" type="text" placeholder="Enter your spices" [(ngModel)]="selectedSpices"> <br><br>
-                        <a class="button is-white is-inverted" (click)="getGarden()">Next&ensp;</a>
+                        <strong class="title">Show us your Garden!:</strong>
+                        <br><br>
+                        <input class="input is-large" type="text" placeholder="Enter your fruits"
+                            [(ngModel)]="selectedFruits"> <br><br>
+                        <input class="input is-large" type="text" placeholder="Enter your vegetables"
+                            [(ngModel)]="selectedVegs"> <br><br>
+                        <input class="input is-large" type="text" placeholder="Enter your spices"
+                            [(ngModel)]="selectedSpices"> <br><br>
+                        <a href="/mainpage#result" class="button is-white is-inverted"
+                            (click)="getGarden()">Next&ensp;</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <div *ngIf="recipes[0]">
+        <section *ngIf="recipes[0]" class="hero is-medium">
+            <div class="hero-body">
+                <div class="container" id="result">
+                    <h1 class="title is-1 ">Your recipe suggestions! <i class="fas fa-seedling"></i></h1>
+                    <div *ngFor="let recipe of recipes" class="card">
+                        <div class="card-content">
+
+                                    <u><h1>{{recipe.title}}</h1></u>
+
+
+                            <div class="content">
+                                <b>Ingredients from your garden: </b>
+                                        <div *ngFor="let ingredient of recipe.usedIngredients">{{ingredient.name}}</div><br>
+                                        <b>Other Ingredients: </b>
+                                                <div *ngFor="let ingredient of recipe.missedIngredients">{{ingredient.name}}
+                                                </div>
+
+                                                <br>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 
 
 </body>

@@ -10,6 +10,7 @@ import {GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule} from 'a
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavigationComponent } from './navigation/navigation.component';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 //import {AuthGuardService} from './auth-guard.service';
 
 @NgModule({
@@ -20,6 +21,7 @@ import { FormsModule } from '@angular/forms';
     NavigationComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     RouterModule.forRoot([
       {path: 'login', component: LoginComponent},
